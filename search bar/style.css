@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+
+  background-color: rgb(63, 17, 23);
+}
+#searchBar {
+  margin: 30px 38% 0;
+  width: 500px;
+  height: 80px;
+  text-align: start;
+  font-size: 40px;
+  color: white;
+  border: 1px solid white;
+  background-color: rgb(44, 14, 18);
+}
+label {
+  font-size: 40px;
+  color: white;
+  display: block;
+  text-align: center;
+}
+ul {
+  width: 500px;
+
+  margin-left: 38%;
+  background-color: rgb(18, 46, 54);
+}
+.listitem {
+  background-color: rgb(195, 227, 240);
+  border: 1px solid grey;
+  width: 100%;
+  list-style: none;
+  padding: 5px;
+}
+.listitem > * {
+  background-color: rgb(195, 227, 240);
+  margin: 10px 0;
+  color: rgb(63, 17, 23);
+}
+.hl {
+  background-color: yellow;
+}

@@ -1,0 +1,61 @@
+@font-face {
+    font-family: league;
+    src: url(Friz\ Quadrata\ Regular.ttf);
+}
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: yellow;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+.panels {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    
+}
+.panel {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    transition: all 0.5s;
+}
+.panel > * {
+    width: 100%;
+    font-family: league;
+    font-size: 30px;
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 10px 0px 10px black;
+    color: white;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0.2s;
+    
+}
+.panel >*:first-child {
+    transform: translateY(-100%);
+}
+.panel-active >*:first-child {
+    transform: translateY(0);
+}
+.panel >*:last-child {
+    transform: translateY(100%);
+}
+.panel-active >*:last-child {
+    transform: translateY(0);
+}
+.open {
+    font-size: 40px;
+    flex: 4;
+}
+.panel1 { background-image: url(lux.jpg);background-size:cover ; background-position: center;}
+.panel2 { background-image: url(rell.jpg);background-size:cover ; background-position: center;}
+.panel3 { background-image: url(zyra.jpg);background-size:cover ; background-position: center;}
+.panel4 { background-image: url(zeri.jpg);background-size:cover ; background-position: center;}
+.panel5 { background-image: url(nidalee.jpg);background-size:cover ; background-position: center;}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="searchBar">search </label>
+    <input
+      type="text"
+      placeholder="Search..."
+      name="searchBar"
+      id="searchBar"
+    />
+    <ul id="lista">
+      <li class="listitem">
+        <span>NOM : Anas Sghir</span>
+        <p>TYPE : ofppt student DD102</p>
+        <span>NOTE : 15</span>
+      </li>
+      <li class="listitem">
+        <span>NOM : Anas Sghir</span>
+        <p>TYPE : ofppt student DD102</p>
+        <span>NOTE : 15</span>
+      </li>
+    </ul>
+    <script>
+      const listPersonne = [
+        { nom: "Anas Sghir", type: "ofppt student DD102", note: 15 },
+        { nom: "Omar Allaoui", type: "ofppt student DD105", note: 19 },
+        { nom: "Hamid Lkogarachi", type: "ofppt student DD101", note: 18 },
+        { nom: "Wisal Zerouihi", type: "ofppt student DD102", note: 12 },
+        { nom: "3bdsamad Sbli", type: "ofppt student DD102", note: 15 },
+        { nom: "Meryem SeHmaoui", type: "ofppt student DD102", note: 12 },
+        { nom: "Amine Lacolombe", type: "ofppt student DD108", note: 6 },
+        { nom: "Aymen Mhboul", type: "ofppt student DD108", note: 4 },
+        { nom: "Yousra Mesoudi", type: "ofppt prof", note: "none" },
+        { nom: "Oussama Elmeryami", type: "ofppt prof", note: "none" },
+        { nom: "chihaja Bentaleb", type: "ofppt prof", note: "none" },
+      ];
+
+      const linput = document.getElementById("searchBar");
+
+      function filterInput(wordtomatch, names) {
+        const matchreg = new RegExp(wordtomatch, "i");
+        return names.filter((item) => {
+          return item.nom.match(matchreg);
+        });
+      }
+      function displayNames() {
+        const matches = filterInput(this.value, listPersonne);
+        const place = document.getElementById("lista");
+
+        const html = matches
+          .map((place) => {
+            const nnn = new RegExp(linput.value, "ig");
+            const realName = place.nom.replace(
+              nnn,
+              `<span class="hl">${linput.value}</span>`
+            );
+            return `<li class="listitem">
+            <span>NOM : ${realName}</span>
+            <p>TYPE : ${place.type}</p>
+            <span>NOTE : ${place.note}</span>
+            </li>`;
+          })
+          .join("");
+
+        place.innerHTML = html;
+      }
+      linput.addEventListener("change", displayNames);
+      linput.addEventListener("keyup", displayNames);
+    </script>
+  </body>
+</html>

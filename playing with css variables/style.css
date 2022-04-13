@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+:root {
+    --blurR : 0px;
+    --saturationR : 0deg;
+    --thecolor : rgb(255, 255, 255);
+}
+.container{
+    width: 1000px;
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(163, 163, 163);
+}
+body {
+    background-color: var(--thecolor);
+}
+img {
+    width: 100%;
+    filter: blur(var(--blurR));
+    filter:hue-rotate(var(--saturationR));
+    
+}
+p {
+    font-weight: bold;
+    font-size: 30px;
+}
+span {
+    color: var(--thecolor);
+}

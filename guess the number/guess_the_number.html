@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>GUESS THE NUMBER</h1>
+    <hr />
+    <div id="cube"><span>?</span></div>
+    <p id="para">Guess a number between 0 - 20 !</p>
+    <div class="whole">
+      <div class="guessing">
+          <p id="moreless"></p>
+        <input type="number" min="0" max="20" id="theValue"/>
+        <button onclick="guess()">GUESS !</button>
+      </div>
+      <div class="scores">
+        <div class="actualscore">
+          <p>Your score : <span id="score">20</span></p>
+        </div>
+        <div class="highscore">
+          <p>Highest score : <span id="highscore">0</span></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let randomNum = Math.round(Math.random()*20)
+      
+      function guess(){
+        const boxbox = document.getElementById('cube')
+        let scorediv = document.getElementById('score')
+        let score = parseInt(scorediv.innerText)
+        let highscorediv = document.getElementById('highscore')
+        let highscore = parseInt(highscorediv.innerText)
+        const theInput = document.getElementById('theValue')
+
+        if(randomNum != theInput.value){
+          score--;
+          boxbox.style.background = 'rgb(177, 0, 38)'
+          scorediv.innerText = score
+          if (randomNum > theInput.value) {
+            const moreless = document.getElementById('moreless').innerText = 'MORE !'
+          } else {
+            const moreless = document.getElementById('moreless').innerText = 'LESS !'
+          }
+        } else {
+          boxbox.style.background = 'rgb(117, 255, 117)'
+          if (score>highscore) highscore = score;
+          highscorediv.innerText = highscore
+          const moreless = document.getElementById('moreless').innerText = 'CORRECT !'
+          randomNum = Math.round(Math.random()*20)
+        }
+       
+        boxbox.firstChild.innerText = theInput.value
+       theInput.value = ''
+      }
+    </script>
+  </body>
+</html>

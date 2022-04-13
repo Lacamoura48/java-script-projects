@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>Elementalist</p>
+            <p>LUX</p>
+            <p>SUPPORT</p>
+        </div>
+        <div class="panel panel2">
+            <p>Classic</p>
+            <p>RELL</p>
+            <p>SUPPORT</p></div>
+        <div class="panel panel3">
+            <p>Crime city</p>
+            <p>ZYRA</p>
+            <p>SUPPORT</p></div>
+        <div class="panel panel4">
+            <p>Classic</p>
+            <p>ZERI</p>
+            <p>ADC</p></div>
+        <div class="panel panel5">
+            <p>Cosmic</p>
+            <p>NIDALEE</p>
+            <p>JUNGLE</p></div>
+    </div>
+    <script>
+        const panels = document.querySelectorAll('.panel')
+        function opendiv(){
+            this.classList.toggle('open')
+            this.classList.toggle('panel-active')
+        }
+        panels.forEach(element =>{
+            element.addEventListener('mouseover',opendiv)
+        })
+        panels.forEach(element =>{
+            element.addEventListener('mouseout',opendiv)
+        })
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variable test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="paris.jpg" alt="Paris">
+        <label for="blurR">Blur :</label>
+        <input type="range" min="0" max="30" id="blurR" data-sizing="px" name="blurR">
+        <label for="saturationR">Saturation :</label>
+        <input type="range" min="0" max="360" id="saturationR"data-ssizing="deg" name="saturationR">
+        <label for="thecolor">Background :</label>
+        <input type="color" id="thecolor" name="thecolor">
+        <p>This is <span>Java Script</span></p>
+    </div>
+    <script>
+        const setBlur = document.getElementById('blurR');
+        const setSat = document.getElementById('saturationR');
+        const setColor = document.getElementById('thecolor');
+        setBlur.addEventListener('change', ()=> {
+            const suffix = setBlur.dataset.sizing;
+            setBlur.style.filter = `blur(${})`   
+            
+        })
+        
+        
+    </script>
+</body>
+</html>
